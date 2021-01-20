@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
     entry: './src/javascript/index.js',
     devServer: {
-        contentBase: './dist'
+        contentBase: path.resolve(__dirname, 'dist')
     },
 
     // Path to your entry point. From this file Webpack will begin his work
@@ -20,34 +20,7 @@ module.exports = {
     //It tells Webpack how to transform each type of file
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            }, 
-            {
-                test: /\.(png|svg|jpe?g|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            outputPath: 'images'
-                        }
-                    }
-                ]
-            }
+            
         ]
     },
     plugins: [
