@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="interface">
+        <div class="header">
+        </div>
+        <script type="text/javascript" src="https://form.jotform.com/jsform/210185411027039"></script>
+    </div>
+    <% for (key in htmlWebpackPlugin.files.js) { %>
+        <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[key] %>" defer></script>
+    <% } %>
+</body>
+</html>
